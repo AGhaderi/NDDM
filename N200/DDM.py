@@ -1,4 +1,4 @@
-#!/home/a.ghaderi/.conda/envs/envjm/bin/python 
+#!/home/a.ghaderi/.conda/envs/envjm/bin/python  
 import os
 import numpy as np
 from scipy import stats
