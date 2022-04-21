@@ -1,4 +1,4 @@
-#!/home/a.ghaderi/.conda/envs/envjm/bin/python
+#!/home/a.ghaderi/.conda/envs/envjm/bin/python 
 import os
 import numpy as np
 from scipy import stats
@@ -19,11 +19,9 @@ def prior(batch_size):
     """
     Samples from the prior 'batch_size' times.
     ----------
-
     Arguments:
     batch_size : int -- the number of samples to draw from the prior
     ----------
-
     Output:
     theta : np.ndarray of shape (batch_size, theta_dim) -- the samples batch of parameters
     """
