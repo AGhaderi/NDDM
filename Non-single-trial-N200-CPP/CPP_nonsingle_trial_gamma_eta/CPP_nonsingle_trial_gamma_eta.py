@@ -1,8 +1,6 @@
 #!/home/a.ghaderi/.conda/envs/envjm/bin/python
 """
-ُNeural standard dift diffusion resulting five paramter DDM with CCP slope: 
-RT_i, ACC_i, CPP_i ~ NDDM2(delta_i, boundary, beta, ndt, sigma)
-CPP_i ~ Normal(drift_i, sigma^2)
+Model 14
 """
 import os
 import numpy as np
