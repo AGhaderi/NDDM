@@ -1,6 +1,6 @@
 #!/home/a.ghaderi/.conda/envs/envjm/bin/python
 """
-ُNeural standard dift diffusion resulting five paramter DDM(drift, boundary, beta, ndt)
+Model 12
 """
 import os
 import numpy as np
