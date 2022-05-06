@@ -1,4 +1,7 @@
 #!/home/a.ghaderi/.conda/envs/envjm/bin/python
+"""
+Model 7
+"""
 import os
 import numpy as np
 from scipy import stats
