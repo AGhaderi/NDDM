@@ -41,19 +41,19 @@ def prior(batch_size):
     # sigma_e ~ U(0, 0.3)
     # gamma ~ ~ U(5, 10) # is 1/lambda
     n_parameters = 6
-    p_samples = np.random.uniform(low=(0.0, 0.5, 0.1, 0.1, 0.0, 0.5),
-                                  high=(3.0, 2.0, 0.9, 1.0, 1.0, 4.0), size=(batch_size, n_parameters))
+    p_samples = np.random.uniform(low=(0.1, 0.5, 0.1, 0.1, 0.1, 0.5),
+                                  high=(3.0, 4.0, 0.9, 1.0, 4.0, 4.0), size=(batch_size, n_parameters))
     return p_samples.astype(np.float32)
 
 @njit
-def diffusion_trial(drift, boundary, beta, ndt, sigma, gamma, dc=1.0, dt=.005):
+def diffusion_trial(drift, boundary, beta, ndt, sigma, gamma, dc=1.0, dt=.005, max_steps=2e4):
     """Simulates a trial from the diffusion model."""
 
     n_steps = 0.
     evidence = boundary * beta
 
     # Simulate a single DM path
-    while (evidence > 0 and evidence < boundary):
+    while (evidence > 0 and evidence < boundary and n_steps < max_steps):
 
         # DDM equation
         evidence += drift*dt + np.sqrt(dt) * dc * np.random.normal()
@@ -70,8 +70,10 @@ def diffusion_trial(drift, boundary, beta, ndt, sigma, gamma, dc=1.0, dt=.005):
     if evidence >= boundary:
         choicert =  dt + ndt
         
-    else:
+    elif evidence <= 0:
         choicert = -dt - ndt
+    else:
+        choicert = np.sign(evidence - boundary*.5)*(dt + ndt)  # Choose closest boundary at max_steps
     return choicert, cpp
 
 @njit
@@ -133,9 +135,10 @@ losses = trainer.train_experience_replay(epochs=500,
 
 # Validate (quick and dirty)
 n_param_sets = 500
+n_trials = 500
 n_samples = 1000
 true_params = prior(n_param_sets)
-x = batch_simulator(true_params, n_samples).astype(np.float32)
+x = batch_simulator(true_params, n_trials).astype(np.float32)
 param_samples = amortizer.sample(x, n_samples=n_samples)
 param_means = param_samples.mean(axis=0)
 true_vs_estimated(true_params, param_means, ['drift', 'boundary', 'beta', 'ndt', 'sigma', 'gamma'], filename="../true_vs_estimate/CPP_nonsingle_trial_sigma_gamma")
