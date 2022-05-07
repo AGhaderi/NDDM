@@ -1,0 +1,12 @@
+model_checkpoint_path: "ckpt-500"
+all_model_checkpoint_paths: "ckpt-496"
+all_model_checkpoint_paths: "ckpt-497"
+all_model_checkpoint_paths: "ckpt-498"
+all_model_checkpoint_paths: "ckpt-499"
+all_model_checkpoint_paths: "ckpt-500"
+all_model_checkpoint_timestamps: 1645432350.8618348
+all_model_checkpoint_timestamps: 1645432518.0793877
+all_model_checkpoint_timestamps: 1645432685.313556
+all_model_checkpoint_timestamps: 1645432853.5188646
+all_model_checkpoint_timestamps: 1645433021.6389492
+last_preserved_timestamp: 1645345578.30958
