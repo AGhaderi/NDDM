@@ -1,5 +1,5 @@
 # Neural drift-diffusion model (NDDM).
-The current repository is for a project entitled "A general integrative neurocognitive modeling framework to jointly describe EEG and decision-making on single trials" in collaboration the Institute for Cognitive and Brain Sciences from the Shahid Beheshti University and Psychological Methods from University of Amsterdam.
+The current repository is related to a project entitled "A general integrative neurocognitive modeling framework to jointly describe EEG and decision-making on single trials" in the Institute for Cognitive and Brain Sciences from the Shahid Beheshti University and Psychological Methods from University of Amsterdam.
 
 **Authors: Amin Ghaderi-Kangavari, Jamal Amani Rad, & Michael D. Nunez**
 
