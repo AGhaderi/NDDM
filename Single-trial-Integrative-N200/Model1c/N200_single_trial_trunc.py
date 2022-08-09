@@ -30,12 +30,12 @@ def prior(batch_size):
 
     # Prior ranges for the simulator
     # drift ~ U(-3.0, 3.0)
-    # boundary ~ U(0.5, 4.0)
+    # boundary ~ U(0.5, 2.0)
     # beta ~ U(0.1, 0.9)  # relative start point
-    # mu_tau_e ~ U(0.05, 0.6)
-    # tau_m ~ U(0.06, 0.8)
-    # sigma ~ U(0, 0.3)
-    # varsigma ~ U(0, 0.3)
+    # mu_tau_e ~ U(0.05, 0.4)
+    # tau_m ~ U(0.06, 0.6)
+    # sigma ~ U(0, 0.1)
+    # varsigma ~ U(0, 0.1)
     n_parameters = 7
     p_samples = np.random.uniform(low=(-3.0, 0.5, 0.1, 0.05, 0.06, 0.0, 0.0),
                                   high=(3.0, 2.0, 0.9, 0.4,  0.6,  0.1, 0.1), size=(batch_size, n_parameters))
@@ -116,7 +116,7 @@ generative_model = GenerativeModel(prior, batch_simulator)
 trainer = ParameterEstimationTrainer(
     network=amortizer,
     generative_model=generative_model,
-    checkpoint_path="../checkpoint/N200_single_trial_trunc"
+    checkpoint_path="Checkpoint"
 )
 
 # Variable n_trials
