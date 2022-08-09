@@ -11,8 +11,6 @@ import matplotlib.pyplot as plt
 from numba import njit
 import tensorflow as tf
 
-import sys
-sys.path.append('../../')
 from bayesflow.networks import InvertibleNetwork, InvariantNetwork
 from bayesflow.amortizers import SingleModelAmortizer
 from bayesflow.trainers import ParameterEstimationTrainer
