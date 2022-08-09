@@ -36,7 +36,7 @@ def prior(batch_size):
     # t_e ~ U(0.05, 0.6)
     # t_m ~ U(0.06, 0.8)
     # sigma_e ~ U(0, 0.3)
-    # gamma ~ ~ U(0.1, 4) # is 1/lambda
+    # gamma ~ ~ U(0.1, 4)
     n_parameters = 7    
     p_samples = np.random.uniform(low=(-3.0, 0.5, 0.1, 0.05, 0.06, 0.0, 0.1),
                                   high=(3.0, 2.0, 0.9, 0.6,  0.8,  0.3, 4.0), size=(batch_size, n_parameters))
