@@ -29,12 +29,12 @@ def prior(batch_size):
     """
 
     # Prior ranges for the simulator
-    # mu_drift ~ U(-3.0, 3.0)
-    # boundary ~ U(0.5, 4.0)
+    # mu_drift ~ U(0.0, 3.0)
+    # boundary ~ U(0.2, 2.0)
     # tau ~ U(0.1, 1.0)
     # sigma ~ ~ U(.5, 4) # is 1/lambda
-    # gamma ~ U(0.3, 4)
-    # Eta ~ U(0.0, 1.0)
+    # gamma ~ U(-3, 3)
+    # Eta ~ U(0.0, 2.0)
     n_parameters = 6
     p_samples = np.random.uniform(low=(0.0,  0.2, 0.1, 0.0, -3, 0.0),
                                   high=(3.0, 2.0, 1.0, 2.0, 3,  2.0), size=(batch_size, n_parameters))
