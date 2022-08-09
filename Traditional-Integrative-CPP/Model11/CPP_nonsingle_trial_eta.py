@@ -1,9 +1,5 @@
 #!/home/a.ghaderi/.conda/envs/envjm/bin/python
-"""
-ُNeural standard dift diffusion resulting five paramter DDM with CCP slope: 
-RT_i, ACC_i, CPP_i ~ NDDM2(delta_i, boundary, beta, ndt, sigma)
-CPP_i ~ Normal(drift_i, sigma^2)
-"""
+
 import os
 import numpy as np
 from scipy import stats
@@ -117,7 +113,7 @@ generative_model = GenerativeModel(prior, batch_simulator)
 trainer = ParameterEstimationTrainer(
     network=amortizer,
     generative_model=generative_model,
-    checkpoint_path="../checkpoint/CPP_nonsingle_trial_eta"
+    checkpoint_path="Checkpoint"
 )
 
 # Variable n_trials
