@@ -34,8 +34,8 @@ def prior(batch_size):
     # boundary ~ U(0.5, 4.0)
     # beta ~ U(0.1, 0.9)  # relative start point
     # tau ~ U(0.1, 1.0)
-    # sigma_e ~ U(0, 0.3)
-    # gamma ~ ~ U(5, 10) # is 1/lambda
+    # sigma_e ~ U(0.1, 4.0)
+    # gamma ~ ~ U(0.5, 4.0) 
     n_parameters = 6
     p_samples = np.random.uniform(low=(0.1, 0.5, 0.1, 0.1, 0.1, 0.5),
                                   high=(3.0, 4.0, 0.9, 1.0, 4.0, 4.0), size=(batch_size, n_parameters))
