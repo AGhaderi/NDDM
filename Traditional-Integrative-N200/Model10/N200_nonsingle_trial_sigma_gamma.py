@@ -114,7 +114,7 @@ generative_model = GenerativeModel(prior, batch_simulator)
 trainer = ParameterEstimationTrainer(
     network=amortizer,
     generative_model=generative_model,
-    checkpoint_path="../checkpoint/N200_nonsingle_trial_sigma_gamma"
+    checkpoint_path="Checkpoint"
 )
 
 # Variable n_trials
