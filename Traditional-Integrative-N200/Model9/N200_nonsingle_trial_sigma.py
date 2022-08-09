@@ -8,8 +8,6 @@ import matplotlib.pyplot as plt
 from numba import njit
 import tensorflow as tf
 
-import sys
-sys.path.append('../../')
 from bayesflow.networks import InvertibleNetwork, InvariantNetwork
 from bayesflow.amortizers import SingleModelAmortizer
 from bayesflow.trainers import ParameterEstimationTrainer
@@ -109,7 +107,7 @@ generative_model = GenerativeModel(prior, batch_simulator)
 trainer = ParameterEstimationTrainer(
     network=amortizer,
     generative_model=generative_model,
-    checkpoint_path="../checkpoint/N200_nonsingle_trial_sigma"
+    checkpoint_path="Checkpoint"
 )
 
 # Variable n_trials
