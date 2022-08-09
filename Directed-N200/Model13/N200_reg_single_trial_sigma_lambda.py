@@ -1,9 +1,5 @@
 #!/home/a.ghaderi/.conda/envs/envjm/bin/python
-"""
-ُNeural standard dift diffusion resulting five paramter DDM(drift, boundary, beta, ndt)
-RT, ACC, z ~ DDM(t_m + lambda*z, )
-x ~ normal(k, sigma)
-"""
+
 import os
 import numpy as np
 from scipy import stats
@@ -35,11 +31,11 @@ def prior(batch_size):
 
     # Prior ranges for the simulator
     # drift ~ U(-3.0, 3.0)
-    # boundary ~ U(0.5, 4.0)
-    # beta ~ U(0.1, 0.99)  # relative start point
+    # boundary ~ U(0.1, 2.0)
+    # beta ~ U(0.1, 0.9)  # relative start point
     # t_m ~ U(0.06, 0.5)
     # sigma_e ~ U(0, 0.3)
-    # lambda ~ U(.5, 4) # is 1/lambda
+    # lambda ~ U(.01, 2.0) # is 1/lambda
     # k ~ U(.05, 0.4)
     n_parameters = 7
     
