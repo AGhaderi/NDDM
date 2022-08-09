@@ -1,6 +1,6 @@
 #!/home/a.ghaderi/.conda/envs/envjm/bin/python
 """
-Model 1
+Model 1a
 """
 import os
 import numpy as np
