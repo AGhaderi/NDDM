@@ -30,7 +30,7 @@ def prior(batch_size):
 
     # Prior ranges for the simulator
     # drift ~ U(-3.0, 3.0)
-    # boundary ~ U(0.5, 4.0)
+    # boundary ~ U(0.5, 2.0)
     # beta ~ U(0.1, 0.9)  # relative start point
     # t_e ~ U(0.05, 0.6)
     # t_m ~ U(0.06, 0.8)
