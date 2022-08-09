@@ -9,8 +9,6 @@ import matplotlib.pyplot as plt
 from numba import njit
 import tensorflow as tf
 
-import sys
-sys.path.append('../../')
 from bayesflow.networks import InvertibleNetwork, InvariantNetwork
 from bayesflow.amortizers import SingleModelAmortizer
 from bayesflow.trainers import ParameterEstimationTrainer
@@ -36,7 +34,7 @@ def prior(batch_size):
     # boundary ~ U(0.5, 4.0)
     # beta ~ U(0.1, 0.9)  # relative start point
     # tau ~ U(0.1, 1.0)
-    # Eta ~ U(0.0, 1.0)
+    # Eta ~ U(0.01, 2.0)
     n_parameters = 5
     p_samples = np.random.uniform(low=(0.0, 0.5, 0.1, 0.1, 0.01),
                                   high=(3.0, 4.0, 0.9, 1.0, 2.0), size=(batch_size, n_parameters))
