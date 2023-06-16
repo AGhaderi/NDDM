@@ -4,7 +4,7 @@ The current repository is related to a project entitled "A general integrative n
 **Authors: Amin Ghaderi-Kangavari, Jamal Amani Rad, & Michael D. Nunez**
 
 ### Citation
-Ghaderi-Kangavari, A., Rad, J. A., & Nunez, M. D. (2022, August 8). A general integrative neurocognitive modeling framework to jointly describe EEG and decision-making on single trials. https://doi.org/10.31234/osf.io/pqv2c
+Ghaderi-Kangavari, A., Rad, J.A. & Nunez, M.D. A General Integrative Neurocognitive Modeling Framework to Jointly Describe EEG and Decision-making on Single Trials. Comput Brain Behav (2023). https://doi.org/10.1007/s42113-023-00167-4
 
 
 ## Prerequisites
